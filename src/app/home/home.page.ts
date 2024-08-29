@@ -25,7 +25,13 @@ export class HomePage {
 
     if(userdata === this.username 
       && pwddata === this.password){
-       this.showToastMessage('Login exitoso!', 'success');
+       this.showToastMessage('Login exitoso!', 'success')
+       const navigationExtras = { 
+          state: { 
+            username: this.username
+          }
+        };
+       this.router.navigate(['/index'], navigationExtras);
     }else{
        this.showToastMessage('Invalido!', 'danger');
     }
