@@ -30,17 +30,19 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-input label="Fec. Nac." [(ngModel)]="birthday">{{birthday}}</ion-input>
+      <ion-input label="Fec. Nac." [(ngModel)]="birthday" [value]="birthday | date: 'dd-MM-yyyy'"></ion-input>
       <ion-button fill="clear" id="open-datetime">
           <ion-icon slot="icon-only" name="calendar"></ion-icon>
       </ion-button>
       <ion-popover trigger="open-datetime" triggerAction="click">
           <ng-template>
               <ion-datetime [(ngModel)]="birthday" locale="es-ES"
-                            [showDefaultButtons]="true" presentation="date"></ion-datetime>
+                            [showDefaultButtons]="true" presentation="date">
+              </ion-datetime>
           </ng-template>
       </ion-popover>
   </ion-item>
+  
   </ion-list>
   <ion-button size="small" (click)="clear()">Limpiar</ion-button>
   <ion-button size="small" (click)="showInfo()">Mostrar Info</ion-button>
