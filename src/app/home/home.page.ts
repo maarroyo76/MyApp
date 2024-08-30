@@ -31,18 +31,18 @@ export class HomePage {
             username: this.username
           }
         };
-       this.router.navigate(['/index'], navigationExtras);
+       this.router.navigate(['/profile'], navigationExtras);
     }else{
        this.showToastMessage('Invalido!', 'danger');
     }
   }
-  async goProfile(){
+  async goIndex(){
     const navigationExtras = { 
       state: { 
         username: this.username
       }
     };
-    this.router.navigate(['/profile'], navigationExtras);
+    this.router.navigate(['/index'], navigationExtras);
   }
 
   async showToastMessage(message: string, color: string){
