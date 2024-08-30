@@ -1,18 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Perfil</ion-title>
+    <ion-title>SkeletonApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Bienvenido!</ion-title>
     </ion-toolbar>
-    Usuario: {{username}}
   </ion-header>
-  <div>
+  
+  <div id="container">
+    <h1>Bienvenido!</h1>
+    Usuario: {{username}}
+    <h2>Informacion Adicional</h2>
   <ion-list>
     <ion-item>
       <ion-input label="Nombre" [(ngModel)]="name"></ion-input>
@@ -41,11 +42,11 @@
       </ion-popover>
   </ion-item>
   </ion-list>
-  <ion-button (click)="clear()">Limpiar</ion-button>
-  <ion-button (click)="showInfo()">Mostrar Info</ion-button>
+  <ion-button size="small" (click)="clear()">Limpiar</ion-button>
+  <ion-button size="small" (click)="showInfo()">Mostrar Info</ion-button>
 </div>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-title size="large">App desarrollada por Martin Arroyo</ion-title>
+    <ion-title size="small">App desarrollada por Martin Arroyo</ion-title>
   </ion-toolbar>

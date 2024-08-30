@@ -36,6 +36,14 @@ export class HomePage {
        this.showToastMessage('Invalido!', 'danger');
     }
   }
+  async goProfile(){
+    const navigationExtras = { 
+      state: { 
+        username: this.username
+      }
+    };
+    this.router.navigate(['/profile'], navigationExtras);
+  }
 
   async showToastMessage(message: string, color: string){
     const toast = await this.toastController.create({

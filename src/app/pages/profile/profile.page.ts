@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ProfilePage {
 
-  username: string = 'Invitado';
+  username!: string;
   name!: string;
   lastname!: string;
   edLevel!: string;
