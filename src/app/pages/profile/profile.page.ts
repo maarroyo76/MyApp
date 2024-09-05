@@ -27,7 +27,8 @@ export class ProfilePage {
 
    async showInfo() {
     const alert = await this.alertController.create({
-      header: 'Alerta!',
+      header: 'Usuario',
+      subHeader: 'Información',
       message: 'Hola ' + this.name + ' '+ this.lastname + '!',
     });
     alert.present();
