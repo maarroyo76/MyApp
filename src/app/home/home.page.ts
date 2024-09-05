@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-home',
@@ -16,15 +17,15 @@ export class HomePage {
 
   constructor(
       private toastController: ToastController,
-      private router: Router
+      private router: Router,
+      private loginService: LoginService
   ) {}
 
   async validarLogin(){
     const userdata: string= 'Martin';
     const pwddata: string= '123456';
 
-    if(userdata === this.username 
-      && pwddata === this.password){
+    if(this.loginService.validateLogin(this.username, this.password)){
        this.showToastMessage('Login exitoso!', 'success')
        const navigationExtras = { 
           state: { 
