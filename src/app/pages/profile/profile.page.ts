@@ -40,6 +40,9 @@ export class ProfilePage {
     this.lastname = '';
     this.edLevel = '';
   }
+  goIndex(){
+    this.router.navigate(['/index']);
+  }
   
 
 }
