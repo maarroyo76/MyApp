@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimationController, IonTitle } from '@ionic/angular';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-index',
@@ -12,7 +13,9 @@ export class IndexPage implements OnInit, AfterViewInit{
   @ViewChild(IonTitle, { read: ElementRef })
   ionTitleRef!: ElementRef<HTMLIonTitleElement>
   constructor(
-    private animationController: AnimationController
+    private animationController: AnimationController,
+    private loginService: LoginService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -48,6 +51,11 @@ export class IndexPage implements OnInit, AfterViewInit{
     .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
     .fromTo('opacity', '1', '0.2')
     .play();
+  }
+
+  logOut(){
+    this.loginService.logOut();
+    this.router.navigate(['/home']);
   }
 
 }

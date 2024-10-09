@@ -66,6 +66,7 @@ export class HomePage implements AfterViewInit{
           }
         };
        this.router.navigate(['/profile'], navigationExtras);
+       this.clear();
     }else{
        this.showToastMessage('Invalido!', 'danger');
     }
@@ -87,6 +88,11 @@ export class HomePage implements AfterViewInit{
       position: 'bottom'
     });
     toast.present();
+  }
+
+  clear(){
+    this.username = '';
+    this.password = '';
   }
 
 }

@@ -19,9 +19,19 @@ export class LoginService {
     const found = this.users.find(user => user.username === username && user.password === password);
     if (found !== undefined) {
       console.log("Usuario encontrado!")
+      localStorage.setItem('currentUser', JSON.stringify(found));
       return found.password === password;
     }
     console.log("Usuario no encontrado!")
     return false;
+  }
+
+  isAuthenticated(): boolean {
+    const user = localStorage.getItem('currentUser');
+    return !!user;
+  }
+
+  logOut(){
+    localStorage.removeItem('currentUser');
   }
 }
